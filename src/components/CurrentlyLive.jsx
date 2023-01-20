@@ -1,4 +1,4 @@
-import { faStar } from "@fortawesome/free-regular-svg-icons";
+import { faCalendarDays } from "@fortawesome/free-regular-svg-icons";
 import {
   faChevronLeft,
   faChevronRight,
@@ -7,13 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Card from "./Card";
 
-function Favorites() {
+function CurrentlyLive() {
   return (
-    <section className="dashboard-section">
+    <section className="dashboard-section" style={{ marginTop: "1rem" }}>
       <div className="dashboard-section-title">
         <div>
-          <FontAwesomeIcon icon={faStar} color="#292b2d" />
-          <h3>Favorites</h3>
+          <FontAwesomeIcon icon={faCalendarDays} color="#292b2d" />
+          <h3>Currently Live</h3>
           <a href="/">See All</a>
         </div>
         <div className="card-arrows">
@@ -23,13 +23,9 @@ function Favorites() {
       </div>
       <div className="dashboard-section-card">
         <Card />
-        <Card error={true} />
-        <Card />
-        <Card />
-        <Card />
       </div>
     </section>
   );
 }
 
-export default Favorites;
+export default CurrentlyLive;

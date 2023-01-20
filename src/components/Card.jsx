@@ -11,7 +11,9 @@ import React from "react";
 
 function Card({ error }) {
   return (
-    <div className="card">
+    <div
+      className="card"
+      style={{ boxShadow: error && "inset 5px 0 0 0 #e54e6b" }}>
       <div>
         <header className="card-title">
           <h5>AVI1958872W - Ended</h5>

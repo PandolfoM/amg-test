@@ -6,6 +6,7 @@ $tert: #3383a8;
 $white: #fff;
 $off-white: #f5f9fa;
 $black: #292b2d;
+$danger: #e54e6b;
 
 * {
   font-family: "Poppins", sans-serif;
@@ -128,7 +129,7 @@ $black: #292b2d;
   }
 
   // Favorites
-  &-favorites {
+  &-section {
     padding: 20px 20px 20px 90px;
     background-color: $off-white;
     height: 391px;
@@ -176,6 +177,7 @@ $black: #292b2d;
       overflow-x: scroll;
       gap: 1rem;
       .card {
+        box-sizing: border-box;
         padding: 1rem;
         min-width: 320px;
         min-height: 293px;
