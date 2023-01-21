@@ -5,15 +5,35 @@ import {
   faReceipt,
   faShirt,
   faUsers,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 
 function Card({ error }) {
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <div
       className="card"
       style={{ boxShadow: error && "inset 5px 0 0 0 #e54e6b" }}>
+      {isVisible && (
+        <div className="card-edit-actions">
+          <FontAwesomeIcon
+            icon={faXmark}
+            color="#3383A8"
+            size="lg"
+            onClick={() => setIsVisible(false)}
+          />
+          <div>
+            <p>View Campaign Details</p>
+            <p>Edit Campaign</p>
+            <p>View Submissions</p>
+            <p>Download Submissions</p>
+            <p>Remove Favorite</p>
+          </div>
+        </div>
+      )}
       <div>
         <header className="card-title">
           <h5>AVI1958872W - Ended</h5>
@@ -21,6 +41,7 @@ function Card({ error }) {
             icon={faEllipsisVertical}
             color="#3383a8"
             size="lg"
+            onClick={() => setIsVisible(true)}
           />
         </header>
         <div className="card-body">

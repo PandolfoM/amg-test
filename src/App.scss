@@ -207,7 +207,6 @@ $danger: #e54e6b;
     &-title {
       display: flex;
       justify-content: space-between;
-      padding-bottom: 1rem;
 
       div {
         display: flex;
@@ -246,7 +245,10 @@ $danger: #e54e6b;
       flex-direction: row;
       flex-wrap: nowrap;
       overflow-x: scroll;
+      padding-top: 1rem;
+
       gap: 1rem;
+
       .card {
         box-sizing: border-box;
         padding: 1rem;
@@ -256,6 +258,32 @@ $danger: #e54e6b;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        position: relative;
+
+        &-edit-actions {
+          display: flex;
+          flex-direction: row-reverse;
+          gap: 2rem;
+          padding: 0.5rem;
+          z-index: 1;
+          position: absolute;
+          right: 0;
+          top: 0;
+          background-color: $white;
+          box-shadow: 0 0 5px #292b2d43;
+
+          svg {
+            cursor: pointer;
+          }
+
+          p {
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: lighter;
+            color: $tert;
+            line-height: 20px;
+          }
+        }
 
         &-title {
           border-bottom: 1px solid $tert;
@@ -269,6 +297,10 @@ $danger: #e54e6b;
             font-size: 16px;
             font-weight: 600;
             color: $black;
+          }
+
+          svg {
+            cursor: pointer;
           }
         }
 
