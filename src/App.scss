@@ -233,12 +233,16 @@ $danger: #e54e6b;
 
       .card-arrows {
         gap: 5px;
-        svg {
-          cursor: pointer;
-          width: 25px;
-          height: 25px;
-          padding: 2px;
+
+        button {
           background-color: $tert;
+          border: none;
+          cursor: pointer;
+          svg {
+            width: 25px;
+            height: 25px;
+            padding: 2px;
+          }
         }
       }
     }

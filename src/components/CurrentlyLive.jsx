@@ -22,31 +22,27 @@ function CurrentlyLive() {
         <div>
           <FontAwesomeIcon icon={faCalendarDays} color="#292b2d" />
           <h3>Currently Live</h3>
-          <p onClick={() => setSeeAll(!seeAll)}>
+          <p onClick={() => isOverflow && setSeeAll(!seeAll)}>
             {seeAll ? "Hide" : "See All"}
           </p>
         </div>
         <div className="card-arrows">
-          <FontAwesomeIcon
+          <button
             style={{
               backgroundColor: !isOverflow && "#A6C9D8",
-              cursor: !isOverflow && "not-allowed",
+              cursor: !isOverflow && "default",
             }}
-            icon={faChevronLeft}
-            color="white"
-            size="xl"
-            onClick={() => isOverflow && scroll(-300)}
-          />
-          <FontAwesomeIcon
+            onClick={() => isOverflow && scroll(-300)}>
+            <FontAwesomeIcon icon={faChevronLeft} color="white" size="xl" />
+          </button>
+          <button
             style={{
               backgroundColor: !isOverflow && "#A6C9D8",
-              cursor: !isOverflow && "not-allowed",
+              cursor: !isOverflow && "default",
             }}
-            icon={faChevronRight}
-            color="white"
-            size="xl"
-            onClick={() => isOverflow && scroll(300)}
-          />
+            onClick={() => isOverflow && scroll(300)}>
+            <FontAwesomeIcon icon={faChevronRight} color="white" size="xl" />
+          </button>
         </div>
       </div>
       <div
