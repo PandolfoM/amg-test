@@ -34,23 +34,23 @@ function Navbar() {
         </div>
         <div className="navbar-upper-item">
           <FontAwesomeIcon icon={faGauge} color="#46B3E5" size="2x" />
-          {isOpened && <p>Dashboard</p>}
+          <p>Dashboard</p>
         </div>
         <div className="navbar-upper-item">
           <FontAwesomeIcon icon={faBullhorn} color="#46B3E5" size="2x" />
-          {isOpened && <p>Campaigns</p>}
+          <p>Campaigns</p>
         </div>
         <div className="navbar-upper-item">
           <FontAwesomeIcon icon={faEnvelopesBulk} color="#46B3E5" size="2x" />
-          {isOpened && <p>Submissions</p>}
+          <p>Submissions</p>
         </div>
         <div className="navbar-upper-item">
           <FontAwesomeIcon icon={faUsers} color="#46B3E5" size="2x" />
-          {isOpened && <p>Users</p>}
+          <p>Users</p>
         </div>
         <div className="navbar-upper-item">
           <FontAwesomeIcon icon={faChartPie} color="#46B3E5" size="2x" />
-          {isOpened && <p>Custom Reports</p>}
+          <p>Custom Reports</p>
         </div>
       </div>
       <div className="navbar-lower">

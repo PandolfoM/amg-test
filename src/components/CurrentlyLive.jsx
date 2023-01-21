@@ -4,11 +4,15 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Card from "./Card";
 
 function CurrentlyLive() {
   const [seeAll, setSeeAll] = useState(false);
+  const ref = useRef();
+  const scroll = (scrollOffset) => {
+    ref.current.scrollLeft += scrollOffset;
+  };
 
   return (
     <section className="dashboard-section" style={{ marginTop: "1rem" }}>
@@ -21,8 +25,18 @@ function CurrentlyLive() {
           </p>
         </div>
         <div className="card-arrows">
-          <FontAwesomeIcon icon={faChevronLeft} color="white" size="xl" />
-          <FontAwesomeIcon icon={faChevronRight} color="white" size="xl" />
+          <FontAwesomeIcon
+            icon={faChevronLeft}
+            color="white"
+            size="xl"
+            onClick={() => scroll(-300)}
+          />
+          <FontAwesomeIcon
+            icon={faChevronRight}
+            color="white"
+            size="xl"
+            onClick={() => scroll(300)}
+          />
         </div>
       </div>
       <div
