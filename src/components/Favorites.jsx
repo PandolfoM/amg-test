@@ -5,11 +5,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useRef, useState } from "react";
+import { useIsOverflow } from "../hooks/useIsOverflow";
 import Card from "./Card";
 
 function Favorites() {
   const [seeAll, setSeeAll] = useState(false);
   const ref = useRef();
+  const isOverflow = useIsOverflow(ref);
+
+  console.log(isOverflow);
   const scroll = (scrollOffset) => {
     ref.current.scrollLeft += scrollOffset;
   };
@@ -26,16 +30,24 @@ function Favorites() {
         </div>
         <div className="card-arrows">
           <FontAwesomeIcon
+            style={{
+              backgroundColor: !isOverflow && "#A6C9D8",
+              cursor: !isOverflow && "not-allowed",
+            }}
             icon={faChevronLeft}
             color="white"
             size="xl"
-            onClick={() => scroll(-300)}
+            onClick={() => isOverflow && scroll(-300)}
           />
           <FontAwesomeIcon
+            style={{
+              backgroundColor: !isOverflow && "#A6C9D8",
+              cursor: !isOverflow && "not-allowed",
+            }}
             icon={faChevronRight}
             color="white"
             size="xl"
-            onClick={() => scroll(300)}
+            onClick={() => isOverflow && scroll(300)}
           />
         </div>
       </div>
